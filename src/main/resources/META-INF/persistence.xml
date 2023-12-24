@@ -4,15 +4,12 @@
     <!-- 영속성 유닛 : 해당 유닛 정보를 가지고 엔티티 매니저 팩토리를 생성 -->
     <persistence-unit name="jpabook">
         <class>com.example.jpabasic.domain.Member</class>
-        <class>com.example.jpabasic.domain.RoleType</class>
-        <class>com.example.jpabasic.domain.Board</class>
-        <class>com.example.jpabasic.domain.Team</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test" />
             <property name="javax.persistence.jdbc.user" value="sa" />
-            <property name="javax.persistence.jdbc.password" value="1" />
+            <property name="javax.persistence.jdbc.password" value="" />
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
 
