@@ -1,6 +1,5 @@
 package com.example.jpabasic;
 
-import com.example.jpabasic.domain.Member;
 import jakarta.persistence.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,6 +27,7 @@ public class JpaBasicApplication {
 		try {
 			tx.begin(); // 트랜잭션 시작
 			logic(em); // ** 예제별 로직 호출 지점 **
+			log.info("=============================");
 			tx.commit(); // 트랜잭션 Commit
 		} catch (Exception e) {
 			log.error(e.getMessage());
@@ -39,9 +39,6 @@ public class JpaBasicApplication {
 	}
 
 	private static void logic(EntityManager em) {
-		Member member = new Member();
-		member.setId(1);
-		member.setUsername("김선호");
-		em.persist(member);
+
 	}
 }

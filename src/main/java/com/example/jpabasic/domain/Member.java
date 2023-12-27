@@ -1,30 +1,57 @@
 package com.example.jpabasic.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "MEMBER")
-@Setter
+@Table(name = "member")
 @Getter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Member {
 
-    public Member(long id, String username) {
-        this.id = id;
-        this.username = username;
-    }
-
     @Id
-    @Column(name = "MEMBER_ID")
+    @Column(name = "member_id")
     private long id;
 
-    @Column(name = "USERNAME")
-    private String username;
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "zipCode")
+    private String zipCode;
+
+// 기타 컬럼
+//    @ManyToOne
+//    @JoinColumn(name = "team_id")
+//    private Team team;
+
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "role_type")
+//    private RoleType roleType;
+//
+//    @Temporal(TemporalType.TIMESTAMP)
+//    @Column(name = "created_date")
+//    private LocalDateTime createdDate;
+//
+//    @Temporal(TemporalType.TIMESTAMP)
+//    @Column(name = "updated_date")
+//    private LocalDateTime updatedDate;
+//
+//    @Lob
+//    private String description;
+//
+//    @Transient // DB 반영 X
+//    private String temp;
 
 }
